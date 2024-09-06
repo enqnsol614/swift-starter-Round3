@@ -27,7 +27,8 @@ yagombucks.shopName = "yagombucks"
 yagombucks.menu = menu
 
 yagombucks.assignBarista(barista: misterLee)
-missKim.buyCoffee(coffeeShop: yagombucks, coffee: .cafeLatte)
-misterLee.buyCoffee(coffeeShop: yagombucks, coffee: .americano)
+missKim.order(.cafeLatte, of: yagombucks, by: missKim.name)
+misterLee.order(.americano, of: yagombucks, by: misterLee.name)
 
-print("\(yagombucks.shopName)의 매출은 \(yagombucks.revenue)원입니다.")
+print("\(yagombucks.shopName)의 매출액: \(yagombucks.revenue)원")
+print("픽업 테이블에 있는 커피: \(yagombucks.pickUpTable.map { $0.orderMenu }.joined(separator: ", "))")
